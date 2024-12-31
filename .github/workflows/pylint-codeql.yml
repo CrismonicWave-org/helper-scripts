@@ -53,4 +53,11 @@ jobs:
         pwd
         echo "Pylint report generated successfully!"
 
+    - name: Convert Pylint to SARIF
+      run: |
+        ls -al ./python/sarif-helpers
+        python ./python/sarif-helpers/pylint-to-sarif.py pylint-report.json > pylint-report.sarif
+        cat pylint-report.sarif
+        echo "Pylint report converted to SARIF successfully!"
+
 
