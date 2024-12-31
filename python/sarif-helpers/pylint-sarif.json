@@ -1,0 +1,588 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Pylint",
+          "informationUri": "https://pylint.pycqa.org/",
+          "rules": [
+            {
+              "id": "C0301",
+              "shortDescription": {
+                "text": "line-too-long"
+              },
+              "fullDescription": {
+                "text": "Line too long (115/100)"
+              },
+              "defaultConfiguration": {
+                "level": "convention"
+              }
+            },
+            {
+              "id": "C0304",
+              "shortDescription": {
+                "text": "missing-final-newline"
+              },
+              "fullDescription": {
+                "text": "Final newline missing"
+              },
+              "defaultConfiguration": {
+                "level": "convention"
+              }
+            },
+            {
+              "id": "C0114",
+              "shortDescription": {
+                "text": "missing-module-docstring"
+              },
+              "fullDescription": {
+                "text": "Missing module docstring"
+              },
+              "defaultConfiguration": {
+                "level": "convention"
+              }
+            },
+            {
+              "id": "E0401",
+              "shortDescription": {
+                "text": "import-error"
+              },
+              "fullDescription": {
+                "text": "Unable to import 'cryptography.hazmat.primitives.ciphers'"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "W0105",
+              "shortDescription": {
+                "text": "pointless-string-statement"
+              },
+              "fullDescription": {
+                "text": "String statement has no effect"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "C0116",
+              "shortDescription": {
+                "text": "missing-function-docstring"
+              },
+              "fullDescription": {
+                "text": "Missing function or method docstring"
+              },
+              "defaultConfiguration": {
+                "level": "convention"
+              }
+            },
+            {
+              "id": "C0411",
+              "shortDescription": {
+                "text": "wrong-import-order"
+              },
+              "fullDescription": {
+                "text": "standard import \"os\" should be placed before third party imports \"cryptography.hazmat.primitives.ciphers.Cipher\", \"cryptography.hazmat.primitives.kdf.pbkdf2.PBKDF2HMAC\", \"cryptography.hazmat.primitives.hashes\", \"cryptography.hazmat.backends.default_backend\", \"cryptography.hazmat.primitives.padding\""
+              },
+              "defaultConfiguration": {
+                "level": "convention"
+              }
+            },
+            {
+              "id": "R0801",
+              "shortDescription": {
+                "text": "duplicate-code"
+              },
+              "fullDescription": {
+                "text": "Similar lines in 2 files\n==decrypt:[35:45]\n==encrypt:[31:41]\n    kdf = PBKDF2HMAC(\n        algorithm=hashes.SHA256(),\n        length=32,\n        salt=salt,\n        iterations=100000,\n        backend=default_backend()\n    )\n    key = kdf.derive(passphrase.encode())\n\n    # Generate a random initialization vector (IV)"
+              },
+              "defaultConfiguration": {
+                "level": "refactor"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "C0301",
+          "message": {
+            "text": "Line too long (115/100)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "C0304",
+          "message": {
+            "text": "Final newline missing"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 81,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "C0114",
+          "message": {
+            "text": "Missing module docstring"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "E0401",
+          "message": {
+            "text": "Unable to import 'cryptography.hazmat.primitives.ciphers'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "E0401",
+          "message": {
+            "text": "Unable to import 'cryptography.hazmat.primitives.kdf.pbkdf2'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "E0401",
+          "message": {
+            "text": "Unable to import 'cryptography.hazmat.primitives'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "E0401",
+          "message": {
+            "text": "Unable to import 'cryptography.hazmat.backends'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "E0401",
+          "message": {
+            "text": "Unable to import 'cryptography.hazmat.primitives'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "W0105",
+          "message": {
+            "text": "String statement has no effect"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "C0116",
+          "message": {
+            "text": "Missing function or method docstring"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "C0116",
+          "message": {
+            "text": "Missing function or method docstring"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "C0301",
+          "message": {
+            "text": "Line too long (119/100)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "C0304",
+          "message": {
+            "text": "Final newline missing"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "C0114",
+          "message": {
+            "text": "Missing module docstring"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "E0401",
+          "message": {
+            "text": "Unable to import 'cryptography.hazmat.primitives.ciphers'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "E0401",
+          "message": {
+            "text": "Unable to import 'cryptography.hazmat.primitives.kdf.pbkdf2'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "E0401",
+          "message": {
+            "text": "Unable to import 'cryptography.hazmat.primitives'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "E0401",
+          "message": {
+            "text": "Unable to import 'cryptography.hazmat.backends'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "E0401",
+          "message": {
+            "text": "Unable to import 'cryptography.hazmat.primitives'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "W0105",
+          "message": {
+            "text": "String statement has no effect"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "C0116",
+          "message": {
+            "text": "Missing function or method docstring"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "C0116",
+          "message": {
+            "text": "Missing function or method docstring"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "C0411",
+          "message": {
+            "text": "standard import \"os\" should be placed before third party imports \"cryptography.hazmat.primitives.ciphers.Cipher\", \"cryptography.hazmat.primitives.kdf.pbkdf2.PBKDF2HMAC\", \"cryptography.hazmat.primitives.hashes\", \"cryptography.hazmat.backends.default_backend\", \"cryptography.hazmat.primitives.padding\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R0801",
+          "message": {
+            "text": "Similar lines in 2 files\n==decrypt:[35:45]\n==encrypt:[31:41]\n    kdf = PBKDF2HMAC(\n        algorithm=hashes.SHA256(),\n        length=32,\n        salt=salt,\n        iterations=100000,\n        backend=default_backend()\n    )\n    key = kdf.derive(passphrase.encode())\n\n    # Generate a random initialization vector (IV)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R0801",
+          "message": {
+            "text": "Similar lines in 2 files\n==decrypt:[60:68]\n==encrypt:[65:73]\n        sys.exit(1)\n\n    input_file_path = sys.argv[1]\n    output_file_path = sys.argv[2]\n    passphrase = sys.argv[3]\n\n    # Read the input file contents\n    with open(input_file_path, 'rb') as file:"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/encrypt.py"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

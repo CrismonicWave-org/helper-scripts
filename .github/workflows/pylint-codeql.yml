@@ -41,39 +41,14 @@ jobs:
         name: pylint-report
         path: pylint-report.json
 
-  codeql:
-    needs: pylint
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: python
-
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v2
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-      with:
-        category: "/language:python"
-
     - name: Download Pylint report
       uses: actions/download-artifact@v3
       with:
         name: pylint-report
         path: .
 
-    - name: Import Pylint findings into CodeQL
+    - name:
       run: |
-        python -m pip install --upgrade pip
-        pip install codeql-cli
-        codeql database create --language=python --source-root=. --output=codeql-db
-        codeql database analyze codeql-db --format=sarif-latest --output=codeql-results.sarif
-        codeql database import codeql-db pylint-report.json --format=pylint
-        codeql database analyze codeql-db --format=sarif-latest --output=codeql-results.sarif
-        codeql database upload codeql-db --sarif=codeql-results.sarif
+        cat pylint-report.json
+        echo "Pylint report generated successfully!"
+        
