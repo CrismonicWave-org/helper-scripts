@@ -9,6 +9,10 @@ on:
   #   branches:
   #     - main
 
+permissions:
+  contents: read
+  security-events: write
+
 jobs:
   pylint:
     runs-on: ubuntu-latest
@@ -32,7 +36,7 @@ jobs:
         pylint $(find . -name "*.py") --output-format=json > pylint-report.json || true
 
     - name: Upload Pylint report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: pylint-report
         path: pylint-report.json
