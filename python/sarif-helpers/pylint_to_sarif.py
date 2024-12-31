@@ -70,7 +70,7 @@ def main():
     print("Converting Pylint JSON to SARIF format...")
     if len(sys.argv) != 3:
         print("Usage: python pylint_to_sarif.py <pylint_json_file> <sarif_output_file>")
-        sys.exit(1)
+        sys.exit(0)
 
     pylint_json_file = sys.argv[1]
     sarif_output_file = sys.argv[2]
