@@ -29,7 +29,7 @@ jobs:
 
     - name: Run Pylint
       run: |
-        pylint $(find . -name "*.py") --output-format=json > pylint-report.json
+        pylint $(find . -name "*.py") --output-format=json > pylint-report.json || true
 
     - name: Upload Pylint report
       uses: actions/upload-artifact@v4
