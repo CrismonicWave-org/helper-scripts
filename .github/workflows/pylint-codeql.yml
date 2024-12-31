@@ -56,7 +56,7 @@ jobs:
     - name: Convert Pylint to SARIF
       run: |
         ls -al ./python/sarif-helpers
-        python ./python/sarif-helpers/pylint-to-sarif.py pylint-report.json > pylint-report.sarif
+        python ./python/sarif-helpers/pylint_to_sarif.py pylint-report.json > pylint-report.sarif
         cat pylint-report.sarif
         echo "Pylint report converted to SARIF successfully!"
 
