@@ -50,13 +50,7 @@ jobs:
     - name: CAT Pylint report
       run: |
         cat pylint-report.json
+        pwd
         echo "Pylint report generated successfully!"
 
-    - name: Convert Pylint to SARIF
-      run: |
-        pylint-json2sarif -p $(pwd) -o pylint-report.sarif pylint-report.json
 
-    - name: CAT Pylint to SARIF
-      run: |
-        cat pylint-report.sarif
-        echo "Pylint report converted to SARIF successfully!"
