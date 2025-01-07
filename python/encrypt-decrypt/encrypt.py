@@ -1,12 +1,3 @@
-import sys
-import base64
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives import padding
-import os
-
 """
 encrypt_file.py
 
@@ -23,6 +14,15 @@ Arguments:
 Example:
     python encrypt_file.py path/to/your/file.txt path/to/output/file.enc your_passphrase
 """
+
+import sys
+import base64
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import padding
+import os
 
 def encrypt(data, passphrase):
     # Generate a random salt

@@ -3,9 +3,21 @@ import sys
 import uuid
 from datetime import datetime
 
+def map_severity(pylint_type):
+    # Map Pylint types to SARIF severity levels
+    severity_map = {
+        "convention": "note",
+        "refactor": "note",
+        "warning": "warning",
+        "error": "error",
+        "fatal": "error"
+    }
+    return severity_map.get(pylint_type, "note")
+
 def convert_pylint_to_sarif(pylint_json):
     sarif = {
         "version": "2.1.0",
+        "$schema": "http://json.schemastore.org/sarif-2.1.0-rtm.4",
         "runs": [
             {
                 "tool": {
@@ -35,7 +47,7 @@ def convert_pylint_to_sarif(pylint_json):
                     "text": issue["message"]
                 },
                 "defaultConfiguration": {
-                    "level": issue["type"]
+                    "level": map_severity(issue["type"])  # Map severity based on type
                 }
             }
 
@@ -67,16 +79,13 @@ def convert_pylint_to_sarif(pylint_json):
     return sarif
 
 def main():
-    print("Converting Pylint JSON to SARIF format...")
     if len(sys.argv) != 3:
         print("Usage: python pylint_to_sarif.py <pylint_json_file> <sarif_output_file>")
-        sys.exit(0)
+        sys.exit(1)
 
     pylint_json_file = sys.argv[1]
     sarif_output_file = sys.argv[2]
 
-    print(f"Reading Pylint JSON from {pylint_json_file}...")
-    print(f"Writing SARIF output to {sarif_output_file}...")
     with open(pylint_json_file, 'r') as f:
         pylint_json = json.load(f)
 

@@ -62,7 +62,7 @@ jobs:
         echo "Pylint report converted to SARIF successfully!"
 
     - name: Upload SARIF to CodeQL
-      uses: github/codeql-action/upload-sarif@v2
+      uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: pylint-report.sarif
   
