@@ -25,6 +25,17 @@ from cryptography.hazmat.primitives import padding
 import os
 
 def encrypt(data, passphrase):
+    """
+    Encrypts the given data using the provided passphrase.
+
+    Args:
+        data (bytes): The data to be encrypted.
+        passphrase (str): The passphrase used to derive the encryption key.
+
+    Returns:
+        bytes: The base64 encoded encrypted data.
+    """
+    
     # Generate a random salt
     salt = os.urandom(16)
 

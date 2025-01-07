@@ -1,7 +1,8 @@
 """
 decrypt_file.py
 
-This script decrypts a base64 encoded encrypted file using a passphrase and saves the clear text to an output file.
+This script decrypts a base64 encoded encrypted file using a passphrase and saves the clear 
+text to an output file.
 
 Usage:
     python decrypt_file.py <input_file_path> <output_file_path> <passphrase>
