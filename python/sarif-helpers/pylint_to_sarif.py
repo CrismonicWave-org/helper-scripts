@@ -17,7 +17,7 @@ def map_severity(pylint_type):
 def convert_pylint_to_sarif(pylint_json):
     sarif = {
         "version": "2.1.0",
-        "$schema": "http://json.schemastore.org/sarif-2.1.0-rtm.4",
+        "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json",
         "runs": [
             {
                 "tool": {
