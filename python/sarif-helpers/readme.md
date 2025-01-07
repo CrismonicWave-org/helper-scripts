@@ -9,4 +9,3 @@ To see how to leverage this script and subsequently import the converted SARIF f
 In this workflow you will see pykint being executed, then the conversion of the pylint output to SARIF output then uploaded to the CodeQL.
 
 Any enhancements, please email me at ```kencrismon@crismonicwave.com``` or clone it, create a branch and propose a change, enhancement etcetera.
-
