@@ -1,0 +1,48 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Pylint",
+          "informationUri": "https://pylint.pycqa.org/",
+          "rules": [
+            {
+              "id": "C0301",
+              "shortDescription": {
+                "text": "line-too-long"
+              },
+              "fullDescription": {
+                "text": "Line too long (115/100)"
+              },
+              "defaultConfiguration": {
+                "level": "convention"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "C0301",
+          "message": {
+            "text": "Line too long (115/100)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "python/encrypt-decrypt/decrypt.py"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 0
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

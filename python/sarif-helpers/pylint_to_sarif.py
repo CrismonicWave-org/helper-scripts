@@ -23,6 +23,7 @@ def convert_pylint_to_sarif(pylint_json):
                 "tool": {
                     "driver": {
                         "name": "Pylint",
+                        "version": "3.3.3",
                         "informationUri": "https://pylint.pycqa.org/",
                         "rules": []
                     }
@@ -50,7 +51,9 @@ def convert_pylint_to_sarif(pylint_json):
                     "level": map_severity(issue["type"])  # Map severity based on type
                 }
             }
-
+        ## Fixing the column issue with minimum value of 1
+        if issue["column"] == 0:
+            issue["column"] = 1
         result = {
             "ruleId": rule_id,
             "message": {
