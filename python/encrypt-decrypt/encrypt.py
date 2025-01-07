@@ -1,7 +1,8 @@
 """
 encrypt_file.py
 
-This script encrypts a file using a passphrase and saves the encrypted data as a base64 encoded hash to an output file.
+This script encrypts a file using a passphrase and saves the encrypted data 
+as a base64 encoded hash to an output file.
 
 Usage:
     python encrypt_file.py <input_file_path> <output_file_path> <passphrase>
@@ -72,6 +73,22 @@ def encrypt(data, passphrase):
     return encoded_data
 
 def main():
+    """
+    Main function to handle command line arguments and perform file encryption.
+
+    This function reads the input file, encrypts its contents using the provided passphrase,
+    and writes the encrypted data to the output file.
+
+    Usage:
+        python encrypt_file.py <input_file_path> <output_file_path> <passphrase>
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
+        
     if len(sys.argv) != 4:
         print("Usage: python encrypt_file.py <input_file_path> <output_file_path> <passphrase>")
         sys.exit(1)

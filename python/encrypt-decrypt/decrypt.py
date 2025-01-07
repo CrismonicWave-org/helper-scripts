@@ -25,6 +25,21 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import padding
 
 def decrypt(encoded_data, passphrase):
+    """
+    Main function to handle command line arguments and perform file encryption.
+
+    This function reads the input file, encrypts its contents using the provided passphrase,
+    and writes the encrypted data to the output file.
+
+    Usage:
+        python encrypt_file.py <input_file_path> <output_file_path> <passphrase>
+
+    Args:
+        None
+
+    Returns:
+        None
+    """    
     # Base64 decode the encrypted blob
     encrypted_blob = base64.b64decode(encoded_data)
 
@@ -57,6 +72,21 @@ def decrypt(encoded_data, passphrase):
     return data
 
 def main():
+    """
+    Main function to handle command line arguments and perform file decryption.
+
+    This function reads the input file, decrypts its contents using the provided passphrase,
+    and writes the decrypted data to the output file.
+
+    Usage:
+        python decrypt_file.py <input_file_path> <output_file_path> <passphrase>
+
+    Args:
+        None
+
+    Returns:
+        None
+    """    
     if len(sys.argv) != 4:
         print("Usage: python decrypt_file.py <input_file_path> <output_file_path> <passphrase>")
         sys.exit(1)
